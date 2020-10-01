@@ -1,0 +1,48 @@
+<h1>Welcome to Burger Town</h1>
+
+<h2>Click to eat your favorite burgers!</h2>
+
+<h3>Click Devour, to, well, you know</h3>
+
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+        <li class = "burgerList">
+            {{burger_name}}
+        </li>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+        <li id = "eatList">
+            <button class = "devour" dataId = "{{id}}">
+                Devour
+            </button>
+        </li>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+        <li class = "devouredBurgers">
+            {{burger_name}}
+        </li>
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h5>Add a Burger</h5>
+
+<form class = "create-form">
+    <div class = "form-group">
+        <label for = "burgs">Burger Name:</label> 
+        <input type = "text" id = "burgs" name = "name">
+    </div>
+    <button type = "submit" id = "burgerBtn">Add Burger</button> 
+</form>
+
