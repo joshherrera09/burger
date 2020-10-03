@@ -41,13 +41,15 @@ function objToSql(ob) {
   }
 
 var orm = {
-    selectAll: function(column, table) {
-        var queryString = 'SELECT ?? FROM ??';
-        connection.query(queryString, [column, table], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+    selectAll: function(tableInput, cb) {
+        var queryString = 'SELECT * FROM ' + tableInput + ';';
+        connection.query(queryString, function(err, result) {
+            if (err) {
+              throw err;
+            }
+            cb(result);
         });
-    } ,
+    },
 
     insertOne: function(table, vals, cols, cb) {
         var queryString = "INSERT INTO" + table;
