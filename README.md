@@ -13,6 +13,9 @@ This project using the MVC components to generate an application that displays b
 ## Installation
 `npm init` `npm i express express-handlebars mysql`
 ## Usage
+
+[Demo of application](https://github.com/joshherrera09/burger/blob/master/burgerAp.mov)
+
 If you want to add a burger type it intothe text box and submit.  If you want to devour a burger click on the devour button that is next to the burger you would like to eat.
 ## License
 MIT
